@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const researchSchema = new mongoose.Schema({
+const researchSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -10,7 +11,7 @@ const researchSchema = new mongoose.Schema({
         requiered: true
     },
     authors: {
-        type: String,
+        type: Array,
         required: true
     },
     link: {
@@ -20,7 +21,11 @@ const researchSchema = new mongoose.Schema({
     releaseDate: {
         type: Date,
         required: true
+    },
+    page: {
+        type: Number,
+        required: false
     }
 })
 
-mongoose.model('Research', researchSchema);
+mongoose.model('Researches', researchSchema);
